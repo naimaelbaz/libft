@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 10:22:16 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/25 14:46:54 by nel-baz          ###   ########.fr       */
+/*   Created: 2022/10/25 14:53:12 by nel-baz           #+#    #+#             */
+/*   Updated: 2022/10/25 15:02:55 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	
 }
-
-/*int main()
-{
-	char s[] = "hello world !";
-	int fd = open("test.txt",O_WRONLY);
-	ft_putstr_fd(s, fd);
-}*/

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 10:22:16 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/25 14:46:54 by nel-baz          ###   ########.fr       */
+/*   Created: 2022/10/25 13:53:02 by nel-baz           #+#    #+#             */
+/*   Updated: 2022/10/25 14:49:44 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
@@ -22,11 +22,11 @@ void	ft_putstr_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
+	write(fd, "\n", 1);
 }
-
 /*int main()
 {
 	char s[] = "hello world !";
 	int fd = open("test.txt",O_WRONLY);
-	ft_putstr_fd(s, fd);
+	ft_putendl_fd(s, fd);
 }*/

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 21:11:28 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/25 09:34:02 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/25 14:20:55 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-int main()
+/*int main()
 {
 	char s[] = "";
 	printf("%s",ft_substr(s,0,6));
-}
+}*/
