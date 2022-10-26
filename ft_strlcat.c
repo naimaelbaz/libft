@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:31:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/25 09:09:11 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/26 20:13:14 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	l;
 
 	j = 0;
+	if (!dst && dstsize == 0)
+		return (0);
 	l = ft_strlen(src) + ft_strlen(dst);
 	i = ft_strlen(dst);
 	if (dstsize == 0 || dstsize < i)

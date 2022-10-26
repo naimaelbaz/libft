@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:22:16 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/25 14:46:54 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/26 19:49:01 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		write(fd, &s[i], 1);
 		i++;

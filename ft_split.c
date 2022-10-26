@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 09:18:51 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/20 23:35:15 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/26 19:43:32 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,27 +63,20 @@ static void	free_ptr(char **ptr, int k)
 	free(ptr);
 }
 
-char	**ft_split(const char *s, char c)
+static char	**spl(char **ptr, const char *s, char c)
 {
-	char	**ptr;
 	size_t	i;
-	size_t	j;
 	size_t	k;
 
-	k = 0;
-	j = 0;
 	i = 0;
-	ptr = (char **)malloc(sizeof(char *) * (num_word(s, c) + 1));
-	if (!ptr)
-		return (NULL);
-	while (s[i] && k < num_word(s, c))
+	k = 0;
+	while (s && k < num_word(s, c))
 	{
 		while (s[i] && s[i] == c)
 			i++;
 		if (s[i] && s[i] != c)
 		{
-			j = lenth_word(s, c, i);
-			ptr[k] = ft_substr((s + i), 0, j);
+			ptr[k] = ft_substr((s + i), 0, lenth_word(s, c, i));
 			if (ptr[k] == NULL)
 				free_ptr(ptr, k);
 			k++;
@@ -95,15 +88,25 @@ char	**ft_split(const char *s, char c)
 	return (ptr);
 }
 
-/*int	main(void)
+char	**ft_split(const char *s, char c)
 {
-	int i = 0;
-	char *str = "hello world";
-	char **splt;
-	splt = ft_split(str, ' ');
-	while (splt[i])
-	{
-		printf("%s\n", splt[i]);
-		i++;
-	}
-}*/
+	char	**ptr;
+
+	if (!s)
+		return (NULL);
+	ptr = (char **)malloc(sizeof(char *) * (num_word(s, c) + 1));
+	if (!ptr)
+		return (NULL);
+	spl(ptr, s, c);
+	return (ptr);
+}
+
+// int    main(void)
+// {
+//     int i = 0;
+//     char **result =  ft_split("\0aa\0bbb", '\0');
+//     {
+//         printf("%s\n", result[i]);
+//         i++;
+//     }
+// }

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:53:02 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/25 14:49:44 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/26 19:49:41 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		write(fd, &s[i], 1);
 		i++;

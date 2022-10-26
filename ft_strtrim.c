@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:56:02 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/24 10:21:56 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/26 19:48:01 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	end = 0;
 	start = 0;
+	if (!s1)
+		return (NULL);
 	if (set == 0)
 		return ((char *)s1);
 	j = ft_strlen(s1);
