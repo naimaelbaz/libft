@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 10:15:47 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/23 11:20:46 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/30 15:15:03 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		ln = ft_strlen(s);
 		while (i < ln)
 		{
-			(*f)(i, s + i);
+			f(i, s + i);
 			i++;
 		}
 	}

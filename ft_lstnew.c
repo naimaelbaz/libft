@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 21:11:28 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/28 15:28:33 by nel-baz          ###   ########.fr       */
+/*   Created: 2022/10/26 21:01:14 by nel-baz           #+#    #+#             */
+/*   Updated: 2022/10/30 09:55:44 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	char	*str;
-	size_t	i;
-	size_t	l;
+	t_list	*node;
 
-	i = 0;
-	if (!s)
+	node = malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	l = ft_strlen(s);
-	if (start >= l)
-		return (ft_strdup(""));
-	if (len > l)
-		len = l - start;
-	if (start + len > l)
-		len--;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	while (s[i] != '\0' && i < len)
-	{
-		str[i] = s[i + start];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	node -> content = content;
+	node -> next = NULL;
+	return (node);
 }
-
+/*int main()
+{
+	char *s = "hello";
+	t_list *con = ft_lstnew((void *)s);
+	printf("%s", (char *)con -> content);
+}*/

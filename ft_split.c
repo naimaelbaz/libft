@@ -6,9 +6,11 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 09:18:51 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/26 19:43:32 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/28 15:32:45 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 #include "libft.h"
 
@@ -63,14 +65,14 @@ static void	free_ptr(char **ptr, int k)
 	free(ptr);
 }
 
-static char	**spl(char **ptr, const char *s, char c)
+static char	**spl(char **ptr, const char *s, char c, size_t n_word)
 {
 	size_t	i;
 	size_t	k;
 
 	i = 0;
 	k = 0;
-	while (s && k < num_word(s, c))
+	while (s && k < n_word)
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -91,22 +93,22 @@ static char	**spl(char **ptr, const char *s, char c)
 char	**ft_split(const char *s, char c)
 {
 	char	**ptr;
+	size_t	n_word;
 
+	n_word = num_word(s, c);
 	if (!s)
 		return (NULL);
-	ptr = (char **)malloc(sizeof(char *) * (num_word(s, c) + 1));
+	ptr = (char **)malloc(sizeof(char *) * (n_word + 1));
 	if (!ptr)
 		return (NULL);
-	spl(ptr, s, c);
+	spl(ptr, s, c, n_word);
 	return (ptr);
 }
 
 // int    main(void)
 // {
-//     int i = 0;
-//     char **result =  ft_split("\0aa\0bbb", '\0');
-//     {
-//         printf("%s\n", result[i]);
-//         i++;
-//     }
+//     char **res =  ft_split("hello!", ' ');
+// 	int i = 0;
+//     while(res[i])printf("%s",res[i++]);
+// 	scanf("%d",i);
 // }

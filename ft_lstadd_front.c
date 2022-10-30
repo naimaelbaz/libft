@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 21:11:28 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/28 15:28:33 by nel-baz          ###   ########.fr       */
+/*   Created: 2022/10/29 20:07:06 by nel-baz           #+#    #+#             */
+/*   Updated: 2022/10/30 09:02:57 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char	*str;
-	size_t	i;
-	size_t	l;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	l = ft_strlen(s);
-	if (start >= l)
-		return (ft_strdup(""));
-	if (len > l)
-		len = l - start;
-	if (start + len > l)
-		len--;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	while (s[i] != '\0' && i < len)
+	if (lst && new)
 	{
-		str[i] = s[i + start];
-		i++;
+		new->next = *lst;
+		*lst = new;
 	}
-	str[i] = '\0';
-	return (str);
 }
 
+/*int main()
+{
+	t_list *node = malloc(sizeof(t_list));
+	node->content = "hello";
+	node->next = NULL;
+	t_list *new = malloc(sizeof(t_list));
+	new->content = "1337";
+	new->next = NULL;
+	ft_lstadd_front(&node,new);
+	while(node != NULL)
+	{
+		printf("%s\n",node->content);
+		node = node->next;
+	}
+}*/

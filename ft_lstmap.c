@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 21:11:28 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/28 15:28:33 by nel-baz          ###   ########.fr       */
+/*   Created: 2022/10/30 16:08:48 by nel-baz           #+#    #+#             */
+/*   Updated: 2022/10/30 16:21:25 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*str;
-	size_t	i;
-	size_t	l;
+	t_list	*ptr;
+	t_list	*tmp;
 
-	i = 0;
-	if (!s)
+	if (!lst || !f)
 		return (NULL);
-	l = ft_strlen(s);
-	if (start >= l)
-		return (ft_strdup(""));
-	if (len > l)
-		len = l - start;
-	if (start + len > l)
-		len--;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
+	ptr = lst;
+	tmp = malloc(sizeof(t_list));
+	if (!tmp)
 		return (NULL);
-	while (s[i] != '\0' && i < len)
+	while (ptr)
 	{
-		str[i] = s[i + start];
-		i++;
+		tmp = f(ptr->content);
+		if (!tmp)
+			ft_lstdelone(ptr, del);
+		ptr = ptr->next;
 	}
-	str[i] = '\0';
-	return (str);
+	return (ptr);
 }
-

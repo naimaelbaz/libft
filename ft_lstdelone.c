@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 12:31:21 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/28 17:36:44 by nel-baz          ###   ########.fr       */
+/*   Created: 2022/10/30 10:47:05 by nel-baz           #+#    #+#             */
+/*   Updated: 2022/10/30 14:25:53 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	size_t	i;
-	size_t	j;
-	size_t	l;
-
-	j = 0;
-	if (!dst && dstsize == 0)
-		return (0);
-	l = ft_strlen(src) + ft_strlen(dst);
-	i = ft_strlen(dst);
-	if (dstsize == 0 || dstsize < i)
-		return (ft_strlen(src) + dstsize);
-	while (src[j] != '\0' && i < (dstsize - 1))
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (l);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
+
+/*void	del(void *ptr)
+{
+	free(ptr);
+}
+int main()
+{
+	t_list *node = ft_lstnew(ft_strdup("hello"));
+	ft_lstdelone(node, del);
+	printf("%s",node->content);
+}*/

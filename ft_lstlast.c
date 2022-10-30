@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 21:11:28 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/28 15:28:33 by nel-baz          ###   ########.fr       */
+/*   Created: 2022/10/29 21:26:00 by nel-baz           #+#    #+#             */
+/*   Updated: 2022/10/30 10:45:43 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*str;
-	size_t	i;
-	size_t	l;
-
-	i = 0;
-	if (!s)
+	if (!lst)
 		return (NULL);
-	l = ft_strlen(s);
-	if (start >= l)
-		return (ft_strdup(""));
-	if (len > l)
-		len = l - start;
-	if (start + len > l)
-		len--;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	while (s[i] != '\0' && i < len)
-	{
-		str[i] = s[i + start];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
 
+/*int main()
+{
+	t_list *node = ft_lstnew(strdup("hello"));
+	t_list *next = ft_lstnew(strdup("hi"));
+	node->next = next;
+	t_list *lst = NULL;
+	lst = ft_lstlast(node);
+	printf("%s",lst->content);
+}*/
