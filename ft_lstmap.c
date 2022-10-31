@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:08:48 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/30 16:21:25 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/31 08:41:59 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f)
 		return (NULL);
-	ptr = lst;
-	tmp = malloc(sizeof(t_list));
-	if (!tmp)
-		return (NULL);
-	while (ptr)
+	ptr = NULL;
+	while (lst)
 	{
-		tmp = f(ptr->content);
+		tmp = ft_lstnew(f(lst->content));
 		if (!tmp)
-			ft_lstdelone(ptr, del);
-		ptr = ptr->next;
+		{
+			ft_lstclear(&tmp, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&ptr, tmp);
+		lst = lst->next;
 	}
 	return (ptr);
 }

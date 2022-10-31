@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 09:18:51 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/28 15:32:45 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/10/31 09:18:14 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,20 +95,12 @@ char	**ft_split(const char *s, char c)
 	char	**ptr;
 	size_t	n_word;
 
-	n_word = num_word(s, c);
 	if (!s)
 		return (NULL);
+	n_word = num_word(s, c);
 	ptr = (char **)malloc(sizeof(char *) * (n_word + 1));
 	if (!ptr)
 		return (NULL);
 	spl(ptr, s, c, n_word);
 	return (ptr);
 }
-
-// int    main(void)
-// {
-//     char **res =  ft_split("hello!", ' ');
-// 	int i = 0;
-//     while(res[i])printf("%s",res[i++]);
-// 	scanf("%d",i);
-// }
