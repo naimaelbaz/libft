@@ -6,16 +6,15 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:35:06 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/07 08:29:27 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 21:33:03 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
-	{
 		return (1);
-	}
-	else
-		return (0);
+	return (0);
 }

@@ -6,16 +6,15 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:51:00 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/06 11:29:19 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 21:32:16 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isdigit(int c)
 {
-	if (c >= 48 && c <= 57)
-	{
+	if (c >= '0' && c <= '9')
 		return (1);
-	}
-	else
-		return (0);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 21:26:00 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/30 10:45:43 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/01 18:35:48 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,3 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-
-/*int main()
-{
-	t_list *node = ft_lstnew(strdup("hello"));
-	t_list *next = ft_lstnew(strdup("hi"));
-	node->next = next;
-	t_list *lst = NULL;
-	lst = ft_lstlast(node);
-	printf("%s",lst->content);
-}*/

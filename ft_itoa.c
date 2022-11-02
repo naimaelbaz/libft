@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:18:25 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/24 11:26:43 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 20:47:05 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ static int	count_size(int n)
 {
 	int	count;
 
-	if (n == 0)
-		return (1);
 	count = 0;
-	if (n < 0)
+	if (n <= 0)
 		count++;
 	while (n != 0)
 	{

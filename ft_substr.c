@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 21:11:28 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/28 15:28:33 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 20:04:16 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	l = ft_strlen(s);
 	if (start >= l)
 		return (ft_strdup(""));
-	if (len > l)
+	if (len > l || start + len > l)
 		len = l - start;
-	if (start + len > l)
-		len--;
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
@@ -39,4 +37,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-

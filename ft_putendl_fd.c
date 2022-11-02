@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:53:02 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/26 19:49:41 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 15:42:00 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
-/*int main()
-{
-	char s[] = "hello world !";
-	int fd = open("test.txt",O_WRONLY);
-	ft_putendl_fd(s, fd);
-}*/

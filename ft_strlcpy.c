@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:14:41 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/24 07:52:08 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 19:46:45 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	ln;
 
-	ln = ft_strlen((char *)src);
+	ln = ft_strlen(src);
 	if (dstsize == 0)
 		return (ln);
 	i = 0;

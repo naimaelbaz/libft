@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:53:12 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/25 15:58:26 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 20:46:32 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putchar_fd('2', fd);
-		ft_putnbr_fd(147483648, fd);
-	}
+		ft_putstr_fd("-2147483648", fd);
 	else if (n >= 0 && n <= 9)
 	{
 		n += 48;

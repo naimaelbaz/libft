@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 13:16:06 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/24 13:57:04 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 19:45:29 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
-	if (!s1 && s2)
-		return (ft_strdup(s2));
-	if (!s2 && s1)
-		return (ft_strdup(s1));
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (NULL);
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);

@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:22:43 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/30 16:17:38 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 21:39:53 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
-# include <ctype.h>
 # include <unistd.h>
-# include <fcntl.h>
 
 typedef struct s_list
 {
@@ -37,7 +33,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_bzero(void *s, size_t n);
-
 
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
@@ -74,8 +69,5 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		alpha(int c);
-
-
 
 #endif

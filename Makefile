@@ -6,13 +6,13 @@
 #    By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 14:39:43 by nel-baz           #+#    #+#              #
-#    Updated: 2022/10/31 08:51:07 by nel-baz          ###   ########.fr        #
+#    Updated: 2022/11/02 18:49:58 by nel-baz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = cc 
+CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 
@@ -32,13 +32,13 @@ ft_lstiter.c ft_lstmap.c
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRSS_BONUS:.c=.o)
 
-.o: .c libft.h
-			$(CC) $(CFLAGS) -c $<
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $<
 
 all : $(NAME)
 
 $(NAME):	$(OBJS)
-		ar cr $(NAME) $(OBJS)
+		ar rc $(NAME) $(OBJS)
 		
 bonus:	 $(OBJS_BONUS)
 		ar cr $(NAME)  $(OBJS_BONUS)

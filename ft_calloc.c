@@ -6,7 +6,7 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:34:03 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/13 14:25:13 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 17:20:12 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(nb);
 	if (!ptr)
 		return (NULL);
-	else
-		ft_bzero(ptr, nb);
-	return ((char *) ptr);
+	ft_bzero(ptr, nb);
+	return (ptr);
 }

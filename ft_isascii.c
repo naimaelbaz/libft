@@ -6,16 +6,15 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:53:41 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/06 12:29:20 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 21:31:58 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-	{
 		return (1);
-	}
-	else
-		return (0);
+	return (0);
 }

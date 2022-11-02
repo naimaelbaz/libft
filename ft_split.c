@@ -6,11 +6,9 @@
 /*   By: nel-baz <nel-baz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 09:18:51 by nel-baz           #+#    #+#             */
-/*   Updated: 2022/10/31 09:18:14 by nel-baz          ###   ########.fr       */
+/*   Updated: 2022/11/02 20:36:47 by nel-baz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 
@@ -56,13 +54,14 @@ static void	free_ptr(char **ptr, int k)
 	int	i;
 
 	i = 0;
-	while (k >= 0)
+	while (i < k)
 	{
-		free(ptr[k]);
-		ptr[k] = NULL;
-		k--;
+		free(ptr[i]);
+		ptr[i] = NULL;
+		i++;
 	}
 	free(ptr);
+	ptr = NULL;
 }
 
 static char	**spl(char **ptr, const char *s, char c, size_t n_word)
@@ -80,7 +79,10 @@ static char	**spl(char **ptr, const char *s, char c, size_t n_word)
 		{
 			ptr[k] = ft_substr((s + i), 0, lenth_word(s, c, i));
 			if (ptr[k] == NULL)
+			{
 				free_ptr(ptr, k);
+				return (NULL);
+			}
 			k++;
 		}
 		while (s[i] && s[i] != c)
@@ -101,6 +103,6 @@ char	**ft_split(const char *s, char c)
 	ptr = (char **)malloc(sizeof(char *) * (n_word + 1));
 	if (!ptr)
 		return (NULL);
-	spl(ptr, s, c, n_word);
+	ptr = spl(ptr, s, c, n_word);
 	return (ptr);
 }
